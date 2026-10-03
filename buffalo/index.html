@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>2508 Buffalo Dr, Arlington TX — Open House Sun Oct 4</title>
-<meta name="description" content="3 bed / 2 bath, 1,238 sqft in Woodland West, Arlington TX. $295,000. Open house Sunday, Oct 4, 11 AM – 4 PM.">
+<title>2508 Buffalo Dr, Arlington TX — $295,000</title>
+<meta name="description" content="3 bed / 2 bath, 1,238 sqft in Woodland West, Arlington TX. $295,000. New roof 2026, updated kitchen and baths.">
 <meta property="og:title" content="2508 Buffalo Dr, Arlington TX — $295,000">
-<meta property="og:description" content="3 bed / 2 bath · 1,238 sqft · New roof 2026 · Open house Sun Oct 4, 11–4">
+<meta property="og:description" content="3 bed / 2 bath · 1,238 sqft · New roof 2026 · Updated kitchen and baths">
 <meta property="og:image" content="img/hero.jpg">
 <style>
   :root {
@@ -31,6 +31,7 @@
                 color: #fff; font-weight: 700; font-size: 15px; text-decoration: none; -webkit-tap-highlight-color: transparent; }
   .photos-btn:hover, .photos-btn:focus-visible { background: rgba(0,0,0,.8); }
   .photos-btn:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+  [hidden] { display: none !important; }
   .badge { position: absolute; left: 16px; bottom: 16px; background: var(--hl); color: #fff;
            padding: 6px 12px; border-radius: 999px; font-weight: 700; font-size: 14px; letter-spacing: .02em; }
   header { padding: 20px 0 8px; }
@@ -71,7 +72,7 @@
 <div class="wrap">
   <div class="hero">
     <img src="img/hero.jpg" alt="Front of 2508 Buffalo Dr: single-story brick home with two-car garage and large front lawn">
-    <span class="badge">Open House · Sun Oct 4</span>
+    <span class="badge" id="oh-badge" hidden></span>
     <a class="photos-btn" href="#photos">See all photos ↓</a>
   </div>
 
@@ -89,9 +90,9 @@
     <li><b>1966</b><span>Year built</span></li>
   </ul>
 
-  <div class="open">
+  <div class="open" id="oh-banner" hidden>
     <div class="k">Open House</div>
-    <div class="d">Sunday, Oct 4 · 11:00 AM – 4:00 PM</div>
+    <div class="d" id="oh-when"></div>
   </div>
 
   <section>
@@ -151,5 +152,48 @@
 
   <footer>This page is a direct flyer from the sellers, not a real estate portal.</footer>
 </div>
+<script>
+// ===== Open house: the only thing to edit for the next one =====
+// Date is YYYY-MM-DD. Shown while that date is today or later (Central time);
+// hidden automatically from the next day on. Leave date as '' for no open house.
+var OPEN_HOUSE = { date: '2026-10-04', hours: '11:00 AM – 4:00 PM' };
+// ================================================================
+
+(function () {
+  var DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+  function todayCentral() {
+    try {
+      var parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Chicago', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(new Date());
+      var v = {};
+      for (var i = 0; i < parts.length; i++) v[parts[i].type] = parts[i].value;
+      if (v.year && v.month && v.day) return v.year + '-' + v.month + '-' + v.day;
+    } catch (e) {}
+    var d = new Date();
+    return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+  }
+
+  function renderOpenHouse(today) {
+    var badge = document.getElementById('oh-badge');
+    var banner = document.getElementById('oh-banner');
+    var when = document.getElementById('oh-when');
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(OPEN_HOUSE.date || '');
+    var show = !!m && OPEN_HOUSE.date >= today;
+    if (show) {
+      var dt = new Date(Date.UTC(+m[1], +m[2] - 1, +m[3]));
+      var day = DAYS[dt.getUTCDay()], mon = MONTHS[dt.getUTCMonth()], dom = dt.getUTCDate();
+      badge.textContent = 'Open House · ' + day.slice(0, 3) + ' ' + mon + ' ' + dom;
+      when.textContent = day + ', ' + mon + ' ' + dom + (OPEN_HOUSE.hours ? ' · ' + OPEN_HOUSE.hours : '');
+    }
+    badge.hidden = !show;
+    banner.hidden = !show;
+  }
+
+  window.renderOpenHouse = renderOpenHouse;
+  window.todayCentral = todayCentral;
+  renderOpenHouse(todayCentral());
+})();
+</script>
 </body>
 </html>
