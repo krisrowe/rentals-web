@@ -3,146 +3,75 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>2508 Buffalo Dr, Arlington TX — Open House Sun Oct 4</title>
-<meta name="description" content="3 bed / 2 bath, 1,238 sqft in Woodland West, Arlington TX. $295,000. Open house Sunday, Oct 4, 11 AM – 4 PM.">
-<meta property="og:title" content="2508 Buffalo Dr, Arlington TX — $295,000">
-<meta property="og:description" content="3 bed / 2 bath · 1,238 sqft · New roof 2026 · Open house Sun Oct 4, 11–4">
-<meta property="og:image" content="img/hero.jpg">
+<title>On Texoma — Properties</title>
+<meta name="description" content="Homes for sale or lease, and vacation rentals from On Texoma.">
 <style>
   :root {
     --bg: #f7f5f1; --card: #ffffff; --ink: #1f2328; --muted: #5d6470;
-    --accent: #1f5f4a; --accent-soft: #e4efe9; --line: #e3dfd8; --hl: #b4532a;
+    --accent: #1f5f4a; --line: #e3dfd8; --hl: #b4532a;
   }
   @media (prefers-color-scheme: dark) {
     :root { --bg: #15181b; --card: #1e2226; --ink: #eceae6; --muted: #a3a9b1;
-            --accent: #6fc2a2; --accent-soft: #1f3a31; --line: #30363c; --hl: #f0a07a; }
+            --accent: #6fc2a2; --line: #30363c; --hl: #f0a07a; }
   }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
   body { margin: 0; background: var(--bg); color: var(--ink);
          font: 17px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
   .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px 40px; }
-  .hero { position: relative; margin: 0 -16px; }
-  .hero img { display: block; width: 100%; height: min(62vh, 520px); object-fit: cover; }
-  .badge { position: absolute; left: 16px; bottom: 16px; background: var(--hl); color: #fff;
-           padding: 6px 12px; border-radius: 999px; font-weight: 700; font-size: 14px; letter-spacing: .02em; }
-  header { padding: 20px 0 8px; }
-  h1 { font-size: 26px; line-height: 1.2; margin: 0 0 2px; }
-  .sub { color: var(--muted); margin: 0; }
-  .price { font-size: 34px; font-weight: 800; color: var(--accent); margin: 10px 0 4px; }
-  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; margin: 14px 0; padding: 0; list-style: none; }
-  .facts li { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; }
-  .facts b { display: block; font-size: 19px; }
-  .facts span { color: var(--muted); font-size: 14px; }
-  .open { background: var(--accent); color: #fff; border-radius: 14px; padding: 16px 18px; margin: 18px 0; }
-  @media (prefers-color-scheme: dark) { .open { color: #10221b; } }
-  .open .k { text-transform: uppercase; font-size: 13px; letter-spacing: .08em; opacity: .85; font-weight: 700; }
-  .open .d { font-size: 22px; font-weight: 800; margin-top: 2px; }
-  section { margin: 26px 0; }
-  h2 { font-size: 20px; margin: 0 0 10px; }
-  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
-  ul.updates { list-style: none; margin: 0; padding: 0; }
-  ul.updates li { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--line); }
-  ul.updates li:last-child { border-bottom: 0; }
-  ul.updates .yr { flex: none; background: var(--accent-soft); color: var(--accent); font-weight: 700;
-                   font-size: 14px; border-radius: 999px; padding: 1px 10px; align-self: center; }
-  .feat { margin: 0; padding-left: 20px; }
-  .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
-  @media (min-width: 640px) { .gallery { grid-template-columns: repeat(3, 1fr); } }
-  .gallery a { display: block; border-radius: 10px; overflow: hidden; background: var(--line); }
-  .gallery img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform .2s; }
-  .gallery a:hover img { transform: scale(1.03); }
-  .contact { text-align: center; }
-  .contact p { margin: 0 0 8px; }
-  .contact .who { font-size: 20px; font-weight: 700; }
-  .contact a { color: var(--accent); }
-  .fine { color: var(--muted); font-size: 13px; }
-  footer { text-align: center; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); padding-top: 16px; margin-top: 30px; }
+  header.site { padding: 28px 0 8px; }
+  header.site h1 { font-size: 30px; margin: 0; letter-spacing: -.01em; }
+  header.site p { margin: 2px 0 0; color: var(--muted); }
+  section { margin: 28px 0; }
+  h2 { font-size: 14px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin: 0 0 12px; }
+  a.listing { display: block; color: inherit; text-decoration: none; background: var(--card);
+              border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+  a.listing:hover .photo img { transform: scale(1.02); }
+  .photo { position: relative; overflow: hidden; }
+  .photo img { display: block; width: 100%; height: min(56vh, 460px); object-fit: cover; transition: transform .25s; }
+  .tag { position: absolute; left: 14px; top: 14px; background: var(--hl); color: #fff;
+         padding: 4px 12px; border-radius: 999px; font-weight: 700; font-size: 14px; }
+  .info { padding: 14px 16px 16px; }
+  .info .t { font-size: 21px; font-weight: 700; margin: 0; }
+  .info .s { color: var(--muted); margin: 2px 0 0; }
+  .info .p { color: var(--accent); font-weight: 800; font-size: 20px; margin: 6px 0 0; }
+  a.simple { display: flex; justify-content: space-between; align-items: center; gap: 12px;
+             color: inherit; text-decoration: none; background: var(--card);
+             border: 1px solid var(--line); border-radius: 16px; padding: 18px 16px; }
+  a.simple .t { font-size: 19px; font-weight: 700; }
+  a.simple .s { color: var(--muted); font-size: 15px; }
+  a.simple .go { color: var(--accent); font-weight: 700; white-space: nowrap; }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="hero">
-    <img src="img/hero.jpg" alt="Front of 2508 Buffalo Dr: single-story brick home with two-car garage and large front lawn">
-    <span class="badge">Open House · Sun Oct 4</span>
-  </div>
-
-  <header>
-    <h1>2508 Buffalo Dr</h1>
-    <p class="sub">Arlington, TX 76013 · Woodland West</p>
-    <div class="price">$295,000</div>
+  <header class="site">
+    <h1>On Texoma</h1>
+    <p>Our properties</p>
   </header>
 
-  <ul class="facts">
-    <li><b>3</b><span>Bedrooms</span></li>
-    <li><b>2</b><span>Bathrooms</span></li>
-    <li><b>1,238</b><span>Sq ft</span></li>
-    <li><b>~0.19 ac</b><span>8,102 sq ft lot</span></li>
-    <li><b>1966</b><span>Year built</span></li>
-  </ul>
-
-  <div class="open">
-    <div class="k">Open House</div>
-    <div class="d">Sunday, Oct 4 · 11:00 AM – 4:00 PM</div>
-  </div>
-
   <section>
-    <h2>Recent updates</h2>
-    <div class="card">
-      <ul class="updates">
-        <li>New roof <span class="yr">2026</span></li>
-        <li>Kitchen quartz counters + new sink <span class="yr">2025</span></li>
-        <li>Interior + select exterior paint <span class="yr">2025</span></li>
-        <li>Two MyQ smart garage door openers <span class="yr">2025</span></li>
-        <li>Both bathrooms remodeled <span class="yr">2024</span></li>
-        <li>PEX water lines <span class="yr">2024</span></li>
-        <li>Rachio smart sprinkler system <span class="yr">2023</span></li>
-        <li>Sewer line to street replaced <span class="yr">2020</span></li>
-        <li>Electrical service + breaker panel <span class="yr">2020</span></li>
-        <li>Fresh sod <span class="yr">New</span></li>
-      </ul>
-    </div>
+    <h2>For Sale / For Lease</h2>
+    <a class="listing" href="buffalo/">
+      <div class="photo">
+        <img src="buffalo/img/hero.jpg" alt="Single-story brick home with two-car garage">
+        <span class="tag">For Sale</span>
+      </div>
+      <div class="info">
+        <p class="t">2508 Buffalo Dr</p>
+        <p class="s">Arlington, TX · 3 bed / 2 bath · 1,238 sq ft</p>
+        <p class="p">$295,000</p>
+      </div>
+    </a>
   </section>
 
   <section>
-    <h2>Features</h2>
-    <div class="card">
-      <ul class="feat">
-        <li>2-car garage plus 2 carport spaces</li>
-        <li>Fenced backyard with mature trees</li>
-        <li>Established Woodland West neighborhood</li>
-      </ul>
-    </div>
+    <h2>Vacation Rentals</h2>
+    <a class="simple" href="https://ontexoma.guestybookings.com/">
+      <span><span class="t">Lake Texoma stays</span><br><span class="s">See availability and book direct</span></span>
+      <span class="go">Book →</span>
+    </a>
   </section>
-
-  <section>
-    <h2>Photos</h2>
-    <div class="gallery">
-      <a href="img/kitchen-1.jpg"><img loading="lazy" src="img/kitchen-1.jpg" alt="Kitchen with quartz counters and stainless appliances"></a>
-      <a href="img/kitchen-2.jpg"><img loading="lazy" src="img/kitchen-2.jpg" alt="Kitchen sink and counters"></a>
-      <a href="img/kitchen-3.jpg"><img loading="lazy" src="img/kitchen-3.jpg" alt="Kitchen looking toward the window"></a>
-      <a href="img/kitchen-4.jpg"><img loading="lazy" src="img/kitchen-4.jpg" alt="Kitchen with new sink and dishwasher"></a>
-      <a href="img/kitchen-utility.jpg"><img loading="lazy" src="img/kitchen-utility.jpg" alt="Kitchen and utility room"></a>
-      <a href="img/dining.jpg"><img loading="lazy" src="img/dining.jpg" alt="Dining area open to kitchen"></a>
-      <a href="img/living.jpg"><img loading="lazy" src="img/living.jpg" alt="Living room with wood-look floors"></a>
-      <a href="img/bedroom.jpg"><img loading="lazy" src="img/bedroom.jpg" alt="Bedroom"></a>
-      <a href="img/bath-1.jpg"><img loading="lazy" src="img/bath-1.jpg" alt="Remodeled bathroom with glass walk-in shower"></a>
-      <a href="img/bath-2.jpg"><img loading="lazy" src="img/bath-2.jpg" alt="Remodeled bathroom with pedestal sink and tile"></a>
-      <a href="img/backyard.jpg"><img loading="lazy" src="img/backyard.jpg" alt="Fenced backyard with mature trees"></a>
-    </div>
-  </section>
-
-  <section>
-    <div class="card contact">
-      <p>Questions or want a private showing? Reach the sellers directly:</p>
-      <p class="who">Mendy · <a href="tel:+12145487303">214-548-7303</a></p>
-      <p class="fine">Call or <a href="sms:+12145487303">text</a></p>
-    </div>
-  </section>
-
-  <p class="fine">MLS# 21386383 · NTREIS</p>
-
-  <footer>This page is a direct flyer from the sellers, not a real estate portal.</footer>
 </div>
 </body>
 </html>
